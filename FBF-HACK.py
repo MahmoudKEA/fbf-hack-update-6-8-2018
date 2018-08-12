@@ -20,7 +20,7 @@ except:
 	OS = system()
 	if OS == 'Windows':
 			print("[+] Must install mechanicalsoup library for Windows OS")
-			print(" -  Open CMD and use this command 'C:\Python{}\Scripts\pip.exe install MechanicalSoup'".format(pyversion[:3].rstrip(".")))
+			print(" -  Open CMD and use this command 'C:\Python{}\Scripts\pip.exe install MechanicalSoup'".format(pyversion[:3].replace(".", '')))
 			exit()
 	elif OS == 'Linux':
 			print("[+] Must install mechanicalsoup library for Linux OS")
